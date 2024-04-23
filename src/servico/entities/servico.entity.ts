@@ -19,12 +19,12 @@ export class Servico{
     @Column({length: 255, nullable: false})
     duracao: string; 
 
-    @Transform(({ value }: TransformFnParams) => value?.trim())
+    // @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
     @Column("decimal", {precision: 6, scale: 2, nullable: false})
     preco: number;
     
-    @Transform(({ value }: TransformFnParams) => value?.trim())
+    // @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
     @Column({nullable: false})
     vagas: number
