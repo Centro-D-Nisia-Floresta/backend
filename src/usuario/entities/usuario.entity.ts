@@ -1,5 +1,5 @@
 import { Transform, TransformFnParams } from "class-transformer";
-import { IsDate, IsEmail, IsNotEmpty } from "class-validator";
+import { IsDate, IsDateString, IsEmail, IsNotEmpty } from "class-validator";
 import { Servico } from "src/servico/entities/servico.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -25,11 +25,10 @@ export class Usuario{
     @Column({length: 255, nullable: false})
     senha: string;
 
-    @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
-    @IsDate()
+    @IsDateString()
     @Column({nullable: false})
-    dataNascimento: Date;
+    dataNascimento: string;
 
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()

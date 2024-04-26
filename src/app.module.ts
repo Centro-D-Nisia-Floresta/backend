@@ -16,7 +16,7 @@ import { Usuario } from './usuario/entities/usuario.entity';
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: '',
+    password: 'root',
     database: 'db_projetointegrador',
     entities: [Categoria, Servico, Usuario],
     synchronize: true,
