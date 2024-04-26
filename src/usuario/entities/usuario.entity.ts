@@ -1,5 +1,5 @@
 import { Transform, TransformFnParams } from "class-transformer";
-import { IsDate, IsDateString, IsEmail, IsNotEmpty } from "class-validator";
+import { IsDateString, IsEmail, IsNotEmpty } from "class-validator";
 import { Servico } from "src/servico/entities/servico.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
