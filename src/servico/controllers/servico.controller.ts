@@ -1,11 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
 import { ServicoService } from "../services/servico.service";
 import { Servico } from "../entities/servico.entity";
+import { JwtAuthGuard } from "src/auth/guard/jwt-auth.guard";
 
+@UseGuards(JwtAuthGuard)
 @Controller('/servicos')
 export class ServicoController{
     constructor(private readonly servicoService: ServicoService) { }
 
+    
     @Get()
     @HttpCode(HttpStatus.OK)
     findAll(): Promise<Servico[]>{

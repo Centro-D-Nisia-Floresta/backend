@@ -15,7 +15,8 @@ export class ServicoService{
     async findAll(): Promise<Servico[]>{
         return await this.servicoRepository.find({
             relations: {
-                categoria: true
+                categoria: true,
+                usuario: true
             }
         });
     }
@@ -27,7 +28,8 @@ export class ServicoService{
             },
 
             relations: {
-                categoria: true
+                categoria: true,
+                usuario: true
             }
         });
 
@@ -44,7 +46,8 @@ export class ServicoService{
             },
 
             relations: {
-                categoria: true
+                categoria: true,
+                usuario: true
             }
         });
     }

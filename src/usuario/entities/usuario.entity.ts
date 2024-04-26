@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer";
 import { IsDate, IsEmail, IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Servico } from "src/servico/entities/servico.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name: "tb_usuarios"})
 export class Usuario{
@@ -17,7 +18,7 @@ export class Usuario{
     @IsNotEmpty()
     @IsEmail()
     @Column({length: 255, nullable: false})
-    email: string;
+    usuario: string;
 
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
@@ -34,5 +35,8 @@ export class Usuario{
     @IsNotEmpty()
     @Column({ length: 1000, nullable: false })
     foto: string;
+    
+    @OneToMany(() => Servico, (servico) => servico.usuario)
+    servico: Servico[]
     
 }
