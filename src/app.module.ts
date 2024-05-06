@@ -22,6 +22,6 @@ import { ProdService } from './data/services/prod.service';
   UsuarioModule
   ],
   controllers: [AppController],
-  providers: []
+  providers: [  ]
 })
 export class AppModule {}
