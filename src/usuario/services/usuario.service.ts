@@ -17,6 +17,7 @@ export class UsuarioService {
       where: {
         usuario: usuario,
       },
+      
     });
   }
 

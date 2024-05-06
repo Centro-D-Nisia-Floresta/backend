@@ -2,9 +2,12 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPip
 import { ServicoService } from "../services/servico.service";
 import { Servico } from "../entities/servico.entity";
 import { JwtAuthGuard } from "src/auth/guard/jwt-auth.guard";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
+@ApiTags('Servico')
 @UseGuards(JwtAuthGuard)
 @Controller('/servicos')
+@ApiBearerAuth()
 export class ServicoController{
     constructor(private readonly servicoService: ServicoService) { }
 
