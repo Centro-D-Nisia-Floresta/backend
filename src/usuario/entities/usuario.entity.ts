@@ -26,7 +26,7 @@ export class Usuario{
 
 
     @ApiProperty()
-    @Column()
+    @Column({length: 255})
     tipo: string;
 
 
