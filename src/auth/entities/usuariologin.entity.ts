@@ -5,5 +5,5 @@ export class UsuarioLogin {
   public usuario: string;
 
   @ApiProperty()
-  public senha: string
+  public senha: string;
 }

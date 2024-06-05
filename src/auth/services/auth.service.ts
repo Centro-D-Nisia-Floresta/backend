@@ -40,6 +40,7 @@ export class AuthService{
         return{
             id: buscaUsuario.id,
             nome: buscaUsuario.nome,
+            tipo: buscaUsuario.tipo,
             usuario: usuarioLogin.usuario,
             senha: '',
             foto: buscaUsuario.foto,

@@ -24,6 +24,12 @@ export class Usuario{
     @ApiProperty()
     usuario: string;
 
+
+    @ApiProperty()
+    tipo: string;
+
+
+
     @Transform(({ value }: TransformFnParams) => value?.trim())
     @IsNotEmpty()
     @Column({ length: 255, nullable: false })
