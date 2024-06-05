@@ -22,7 +22,7 @@ export class Categoria {
     @IsNotEmpty()
     @Column({ length: 1000, nullable: false })
     @ApiProperty()
-    foto: string;
+    descricao: string;
 
     @ApiProperty()
     @OneToMany(() => Servico, (servico) => servico.categoria)
