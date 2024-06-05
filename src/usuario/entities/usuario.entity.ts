@@ -26,6 +26,7 @@ export class Usuario{
 
 
     @ApiProperty()
+    @Column()
     tipo: string;
 
 
